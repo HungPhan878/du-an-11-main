@@ -1,0 +1,22 @@
+@use "../abstracts";
+
+.add-new__container {
+  margin-top: 20px;
+}
+
+.form-card__label.lv3 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.form-bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+
+  &__btn {
+    @include abstracts.breakpoint(sm) {
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../abstracts";
+
+// placeholder
+%position-fixed {
+  position: fixed;
+  z-index: 7;
+  inset: 0 20% 0 0;
+}
+
+%transition {
+  opacity: 0;
+  transition: 0.3s linear;
+  transition-property: visibility, transform, opacity;
+}
+
+%transitionHover {
+  opacity: 1;
+}

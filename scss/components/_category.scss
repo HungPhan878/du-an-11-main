@@ -1,0 +1,64 @@
+@use "../abstracts";
+
+.cate-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 26px 20px 20px;
+  gap: 20px;
+  border-radius: 16px;
+  background: var(--cate-item-bgd);
+
+  @include abstracts.breakpoint(lg) {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  @include abstracts.breakpoint(md) {
+    // height: 100%;
+    flex-direction: row;
+  }
+
+  &__img {
+    width: 116px;
+    height: 116px;
+    object-fit: contain;
+    background-color: var(--cate-img-bgd-color);
+    border-radius: 8px;
+    @include abstracts.breakpoint(lg) {
+      width: 100%;
+    }
+
+    @include abstracts.breakpoint(md) {
+      width: 99px;
+      height: 99px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  &__info {
+  }
+
+  &__title.lv3 {
+    color: var(--cate-text-color);
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__desc.lv1 {
+    margin-top: 6px;
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.4rem;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      width: 100%;
+    }
+  }
+}

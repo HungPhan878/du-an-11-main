@@ -1,0 +1,19 @@
+@use "../abstracts";
+
+.header {
+  &-inner {
+    @include abstracts.flexGap(14px);
+  }
+
+  &-logo {
+    @include abstracts.breakpoint(lg) {
+      width: 24px;
+    }
+
+    &__title.lv3 {
+      @include abstracts.breakpoint(lg) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

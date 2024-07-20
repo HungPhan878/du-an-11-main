@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment | grocerymart</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- script handle logic -->
+    <script src="./assets/js/script.js"></script>
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "./templates/header-logined.html");
+    </script>
+
+    <!-- checkout -->
+    <div class="checkout-page">
+      <div class="container">
+        <!-- search bar -->
+        <div class="checkout-container">
+          <div class="search-bar d-none d-md-flex">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search for item"
+              class="search-bar__input"
+            />
+            <button class="search-bar__submit">
+              <img
+                src="./assets/icons/search.svg"
+                alt=""
+                class="search-bar__submit-icon icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- breadcrumb -->
+        <div class="checkout-container">
+          <!-- Breadcrumbs -->
+          <ul class="breadcrumbs-list checkout-breadcrumbs--bg">
+            <li class="breadcrumbs-item">
+              <a href="#!" class="breadcrumbs-link">Home</a>
+              <img
+                src="./assets/icons/arrow-right.svg"
+                alt=""
+                class="breadcrumbs-icon"
+              />
+            </li>
+            <li class="breadcrumbs-item">
+              <a href="./checkout.html" class="breadcrumbs-link">Checkout</a>
+              <img
+                src="./assets/icons/arrow-right.svg"
+                alt=""
+                class="breadcrumbs-icon"
+              />
+            </li>
+            <li class="breadcrumbs-item">
+              <a href="./shipping.html" class="breadcrumbs-link">Shipping</a>
+              <img
+                src="./assets/icons/arrow-right.svg"
+                alt=""
+                class="breadcrumbs-icon"
+              />
+            </li>
+            <li class="breadcrumbs-item">
+              <a href="#!" class="breadcrumbs-link breadcrumbs-link--current"
+                >Payment method</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="checkout-container">
+          <div class="row gy-xl-3">
+            <div class="col-8 col-xl-8 col-lg-12">
+              <div class="cart-info">
+                <div class="cart-info__inline">
+                  <h2 class="cart-info__heading cart-info__heading--lv2">
+                    1. Shipping, arrives between Mon, May 16—Tue, May 24
+                  </h2>
+
+                  <button class="cart-info__ctrl-btn">
+                    <img
+                      src="./assets/icons/edit.svg"
+                      alt=""
+                      class="address-card__ctrl-icon icon"
+                    />
+                    Edit
+                  </button>
+                </div>
+
+                <!-- payment item 1 -->
+                <article class="payment-item">
+                  <div class="payment-item__info">
+                    <h3 class="payment-item__heading">Imran Khan</h3>
+                    <p class="payment-item__desc">
+                      Museum of Rajas, Sylhet Sadar, Sylhet 3100.
+                    </p>
+                  </div>
+
+                  <div class="payment-item__choosed"></div>
+                </article>
+
+                <!-- payment item 2 -->
+                <article class="payment-item">
+                  <div class="payment-item__info">
+                    <h3 class="payment-item__heading">Items details</h3>
+                    <p class="payment-item__desc">2 items</p>
+                  </div>
+
+                  <a href="" class="payment-item__link">View details</a>
+                </article>
+              </div>
+
+              <div class="cart-info">
+                <h2 class="cart-info__heading cart-info__heading--lv2">
+                  2. Shipping method
+                </h2>
+                <div class="cart-info__separate"></div>
+
+                <h3 class="cart-info__sub-heading">
+                  Availeble Shipping method
+                </h3>
+                <div class="payment-list">
+                  <!-- payment item 3 -->
+                  <label>
+                    <article class="payment-item payment-item--pointer">
+                      <img
+                        src="./assets/image/payment/delivery-1.png"
+                        alt=""
+                        class="payment-item__thumb"
+                      />
+
+                      <div class="payment-item__content">
+                        <div class="payment-item__info">
+                          <h3 class="payment-item__heading">Fedex Delivery</h3>
+                          <p class="payment-item__desc payment-item__desc--low">
+                            Delivery: 2-3 days work
+                          </p>
+                        </div>
+                        <span
+                          for=""
+                          class="cart-info__radio payment-item__radio"
+                        >
+                          <input
+                            type="radio"
+                            name="deliver-method"
+                            id=""
+                            class="cart-info__radio-input payment-item__radio-input"
+                            checked
+                          />
+                          <p class="payment-item__cost">Free</p>
+                        </span>
+                      </div>
+                    </article>
+                  </label>
+
+                  <!-- payment item 4 -->
+                  <label>
+                    <article class="payment-item payment-item--pointer">
+                      <img
+                        src="./assets/image/payment/delivery-2.png"
+                        alt=""
+                        class="payment-item__thumb"
+                      />
+
+                      <div class="payment-item__content">
+                        <div class="payment-item__info">
+                          <h3 class="payment-item__heading">DHL Delivery</h3>
+                          <p class="payment-item__desc payment-item__desc--low">
+                            Delivery: 2-3 days work
+                          </p>
+                        </div>
+                        <span
+                          for=""
+                          class="cart-info__radio payment-item__radio"
+                        >
+                          <input
+                            type="radio"
+                            name="deliver-method"
+                            id=""
+                            class="cart-info__radio-input payment-item__radio-input"
+                            checked
+                          />
+                          <p class="payment-item__cost">$12.00</p>
+                        </span>
+                      </div>
+                    </article>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4 col-xl-4 col-lg-12">
+              <div class="cart-info cart-info--gutter-y">
+                <h2 class="cart-info__heading cart-info__heading--lv2">
+                  Payment Details
+                </h2>
+                <p class="cart-info__desc">
+                  Complete your purchase item by providing your payment details
+                  order.
+                </p>
+                <form action="" class="cart-info__form">
+                  <div class="form__group">
+                    <label
+                      for="name"
+                      class="section-heading lv3 form__label-title form__label-title--medium"
+                      >Email Address</label
+                    >
+                    <div class="form__row form__row--small">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form__input payment-item__input"
+                        placeholder="Email"
+                        required=""
+                      />
+
+                      <img
+                        src="./assets/icons/warning.svg"
+                        alt="msg"
+                        class="form__input-icon--error"
+                      />
+                    </div>
+                    <p class="form__message-error">Enter name again please</p>
+                  </div>
+
+                  <div class="form__group">
+                    <label
+                      for="name"
+                      class="section-heading lv3 form__label-title form__label-title--medium"
+                      >Card Holder</label
+                    >
+                    <div class="form__row form__row--small">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form__input payment-item__input"
+                        placeholder="Card Holder"
+                        required=""
+                      />
+
+                      <img
+                        src="./assets/icons/warning.svg"
+                        alt="msg"
+                        class="form__input-icon--error"
+                      />
+                    </div>
+                    <p class="form__message-error">Enter name again please</p>
+                  </div>
+
+                  <div class="form__group">
+                    <label
+                      for="name"
+                      class="section-heading lv3 form__label-title form__label-title--medium"
+                      >Card Details</label
+                    >
+                    <div class="form__row form__row--small">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form__input payment-item__input"
+                        placeholder="Card Details"
+                        required=""
+                      />
+
+                      <img
+                        src="./assets/icons/warning.svg"
+                        alt="msg"
+                        class="form__input-icon--error"
+                      />
+                    </div>
+                    <p class="form__message-error">Enter name again please</p>
+                  </div>
+
+                  <div class="form__row payment-item__row payment-item__input">
+                    <div class="form__group payment-item__group">
+                      <div
+                        class="form__row form__row--medium payment-item__input-text"
+                      >
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          class="form__input payment-item__input payment-item__input--fainter"
+                          placeholder="MM/YY"
+                          required=""
+                        />
+
+                        <img
+                          src="./assets/icons/warning.svg"
+                          alt="msg"
+                          class="form__input-icon--error"
+                        />
+                      </div>
+                      <p class="form__message-error">Enter name again please</p>
+                    </div>
+
+                    <div class="form__group payment-item__group">
+                      <div
+                        class="form__row form__row--medium payment-item__input-text"
+                      >
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          class="form__input payment-item__input payment-item__input--fainter"
+                          placeholder="CVC"
+                          required=""
+                        />
+
+                        <img
+                          src="./assets/icons/warning.svg"
+                          alt="msg"
+                          class="form__input-icon--error"
+                        />
+                      </div>
+                      <p class="form__message-error">Enter name again please</p>
+                    </div>
+                  </div>
+                </form>
+                <div class="cart-info__row">
+                  <span
+                    >Subtotal
+                    <span class="cart-info__row-label">(items)</span></span
+                  >
+                  <span class="cart-info__row--font-bold">3</span>
+                </div>
+                <div class="cart-info__row">
+                  <span
+                    >Price
+                    <span class="cart-info__row-label">(Total)</span></span
+                  >
+                  <span class="cart-info__row--font-bold">$191.65</span>
+                </div>
+                <div class="cart-info__row">
+                  <span>Shipping</span>
+                  <span class="cart-info__row--font-bold">$10.00</span>
+                </div>
+                <div class="cart-info__separate"></div>
+                <div class="cart-info__row">
+                  <span>Estimated Total</span>
+                  <span class="cart-info__row--font-bold">$201.65</span>
+                </div>
+
+                <!-- btn -->
+                <a
+                  href="#!"
+                  class="btn btn--primary btn--rounded cart-info__next-btn"
+                  >Pay $201.65</a
+                >
+              </div>
+
+              <div class="cart-info">
+                <a href="#!">
+                  <article class="cart-gift">
+                    <div class="cart-gift__icon-wrap">
+                      <img
+                        src="./assets/icons/gift.svg"
+                        alt=""
+                        class="cart-gift__icon"
+                      />
+                    </div>
+                    <div class="cart-gift__content">
+                      <h3 class="cart-gift__title">
+                        Send this order as a gift.
+                      </h3>
+                      <p class="cart-gift__desc">
+                        Available items will be shipped to your gift recipient.
+                      </p>
+                    </div>
+                  </article>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+    <script>
+      load("#footer", "./templates/footer.html");
+    </script>
+
+    <!-- Dialog and modal: remove a cart item -->
+    <div id="delete-item" class="dialog hide">
+      <div class="dialog__content dialog--small">
+        <!-- close -->
+        <div class="dialog__text">Do you want to delete this product ?</div>
+        <div class="dialog__bottom">
+          <button
+            class="btn btn--outline dialog__btn js-toggle"
+            toggle-target="#delete-item"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn--primary btn--danger btn-no-margin dialog__btn js-toggle"
+            toggle-target="#delete-item"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="dialog__overlay js-toggle" toggle-target="#delete-item"></div>
+    </div>
+
+    <!-- Dialog and modal: add a new address -->
+    <div id="add-new-address" class="dialog hide">
+      <div class="dialog__content">
+        <h2 class="dialog__heading">Add new Shipping address</h2>
+        <!-- close -->
+        <form
+          action="./index-logined.html"
+          class="form auth__form"
+          autocomplete="on"
+        >
+          <div class="dialog__body">
+            <div class="form__row-groups">
+              <div class="form__group">
+                <label
+                  for="name"
+                  class="section-heading lv3 form__label-title form__label-title--small"
+                  >Name</label
+                >
+                <div class="form__row form__row--small">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form__input"
+                    placeholder="Name"
+                    autofocus
+                    required
+                    minlength="2"
+                  />
+
+                  <img
+                    src="./assets/icons/warning.svg"
+                    alt="msg"
+                    class="form__input-icon--error"
+                  />
+                </div>
+                <p class="form__message-error">Enter name again please</p>
+              </div>
+
+              <div class="form__group">
+                <label
+                  for="phone"
+                  class="section-heading lv3 form__label-title form__label-title--small"
+                  >Phone</label
+                >
+                <div class="form__row form__row--small">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    class="form__input"
+                    placeholder="Phone"
+                    autofocus
+                    required
+                    minlength="11"
+                  />
+
+                  <img
+                    src="./assets/icons/warning.svg"
+                    alt="msg"
+                    class="form__input-icon--error"
+                  />
+                </div>
+                <p class="form__message-error">Phone invalid</p>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label
+                for="textarea"
+                class="section-heading lv3 form__label-title form__label-title--small"
+                >Address</label
+              >
+              <div class="form__row-text-area">
+                <textarea
+                  name="textarea"
+                  id="textarea"
+                  class="form__input-text-area"
+                  placeholder="Address (Area and Street)"
+                  required
+                ></textarea>
+
+                <img
+                  src="./assets/icons/warning.svg"
+                  alt="msg"
+                  class="form__input-icon--error"
+                />
+              </div>
+              <p class="form__message-error">Address not empty</p>
+            </div>
+
+            <div class="form__group">
+              <label
+                for="city"
+                class="section-heading lv3 form__label-title form__label-title--small"
+                >City/Hometown/District</label
+              >
+              <div class="form__row form__row--small">
+                <input
+                  type="text"
+                  name=""
+                  id="city"
+                  class="form__input js-toggle"
+                  toggle-target="#select-dialog"
+                  placeholder="City/Hometown/District"
+                />
+                <img
+                  src="./assets/icons/warning.svg"
+                  alt="msg"
+                  class="form__input-icon--error"
+                />
+
+                <!-- select dialog -->
+                <div id="select-dialog" class="form__select-dialog hide">
+                  <h2 class="form__select-heading d-none d-sm-block">
+                    City/Hometown/District
+                  </h2>
+                  <button
+                    class="form__select-btn-close d-none d-sm-block js-toggle"
+                    toggle-target="#select-dialog"
+                  >
+                    &times;
+                  </button>
+
+                  <div class="form__search">
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      class="form__search-input"
+                    />
+                    <img
+                      src="./assets/icons/search.svg"
+                      alt=""
+                      class="form__search-icon icon"
+                    />
+                  </div>
+
+                  <ul class="form__options-list">
+                    <li class="form__option">VietNamese 1</li>
+                    <li class="form__option form__option--active">
+                      VietNamese 2
+                    </li>
+                    <li class="form__option">VietNamese 3</li>
+                    <li class="form__option">VietNamese 4</li>
+                    <li class="form__option">VietNamese 5</li>
+                    <li class="form__option">VietNamese 6</li>
+                    <li class="form__option">VietNamese 7</li>
+                    <li class="form__option">VietNamese 8</li>
+                    <li class="form__option">VietNamese 9</li>
+                    <li class="form__option">VietNamese 10</li>
+                    <li class="form__option">VietNamese 3</li>
+                    <li class="form__option">VietNamese 4</li>
+                    <li class="form__option">VietNamese 5</li>
+                    <li class="form__option">VietNamese 6</li>
+                    <li class="form__option">VietNamese 7</li>
+                    <li class="form__option">VietNamese 8</li>
+                    <li class="form__option">VietNamese 9</li>
+                    <li class="form__option">VietNamese 10</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="form__message-error">Address not empty</p>
+            </div>
+
+            <div class="form__group form__group--inline">
+              <label class="form__checkbox">
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  class="form__checkbox-input d-none"
+                />
+                <span for="" class="form__checkbox-label"
+                  >Set as default address</span
+                >
+              </label>
+            </div>
+          </div>
+          <div class="dialog__bottom">
+            <button
+              class="btn btn--outline dialog__btn js-toggle"
+              toggle-target="#add-new-address"
+            >
+              Cancel
+            </button>
+            <button class="btn btn--primary btn-no-margin dialog__btn">
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="dialog__overlay"></div>
+    </div>
+  </body>
+</html>

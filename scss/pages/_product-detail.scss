@@ -1,0 +1,305 @@
+@use "../abstracts";
+
+.product {
+  &-page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    background-color: var(--product-page-bg);
+    // height: 80vh;
+  }
+
+  &-container {
+    margin-top: 30px;
+
+    @include abstracts.breakpoint(md) {
+      margin-top: 20px;
+    }
+  }
+
+  &-intro--bg {
+    background-color: var(--product-intro-bg);
+    border-radius: 20px;
+    box-shadow: 0px 20px 60px 10px var(--product-intro-shadow);
+  }
+
+  &-review {
+    padding: 0 30px;
+
+    @include abstracts.breakpoint(lg) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include abstracts.breakpoint(md) {
+      padding: 16px;
+    }
+
+    &__list {
+      display: flex;
+      overflow: hidden;
+      @include abstracts.breakpoint(lg) {
+        flex: 1;
+      }
+    }
+
+    &__item {
+      position: relative;
+      width: 100%;
+      flex-shrink: 0;
+      // we used w/h de lay ti le cho padding-top ti le thuan voi w va tao chieu cao h
+      // thi phai dung them relative nua
+      padding-top: 92%;
+    }
+
+    &__item-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &__thums {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 30px;
+
+      @include abstracts.breakpoint(lg) {
+        flex-direction: column;
+        padding-left: 0;
+      }
+    }
+
+    &__thumb-img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border: 1px solid rgba(158, 157, 168, 0.3);
+      border-radius: 8px;
+      opacity: 0.9;
+      transition: opacity, border-color;
+      transition-duration: 0.3s;
+
+      &:not(&--current):hover {
+        opacity: 1;
+        border-color: rgba(158, 157, 168);
+        cursor: pointer;
+      }
+
+      &--current {
+        opacity: 1;
+        border-color: gold;
+      }
+    }
+  }
+
+  &-info {
+    padding: 60px;
+    background-color: var(--product-info-bg);
+    border-radius: 10px;
+
+    @include abstracts.breakpoint(xxl) {
+      padding: 40px;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      margin-top: 30px;
+    }
+
+    @include abstracts.breakpoint(md) {
+      border-radius: 20px;
+      margin-top: 0;
+      padding: 0 16px 16px;
+    }
+  }
+
+  &-info__heading {
+    width: 632px;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.38; /* 138.462% */
+
+    @include abstracts.breakpoint(xl) {
+      width: 380px;
+    }
+
+    @include abstracts.breakpoint(md) {
+      width: 100%;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &-prop {
+    margin-top: 30px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &-prop__icon {
+    align-self: flex-start;
+  }
+
+  &-prop__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44; /* 144.444% */
+  }
+
+  &-prop__desc {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.42; /* 142.857% */
+  }
+
+  // form
+  &-form__col {
+    margin-top: 30px;
+  }
+
+  &-form__btns {
+    column-gap: 20px;
+  }
+
+  &-form__btn {
+    background-color: var(--product-form-btn);
+  }
+
+  // props
+  &-props {
+    margin-left: 30px;
+
+    @include abstracts.breakpoint(xl) {
+      margin-left: 0;
+    }
+  }
+
+  // card
+  &-info__card-wrapper {
+    --text-color: #000;
+
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #b9babe;
+  }
+
+  &-info__card-row {
+    display: flex;
+    align-items: center;
+  }
+
+  &-info__card-price {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5; /* 150% */
+  }
+
+  &-info__card-tax {
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 1.4;
+    font-weight: 500;
+    line-height: 1.42; /* 142.857% */
+    color: #67b044;
+    background: var(
+      --Green-Green-20,
+      linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+      ),
+      #67b044
+    );
+    border-radius: 4px;
+  }
+
+  &-info__card-total-price {
+    margin: 20px 0;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.38; /* 138.462% */
+  }
+
+  &-info__card-btn {
+    flex: 1;
+    height: 46px;
+    font-size: 1.8rem;
+  }
+
+  &-info__like-btn {
+    margin-left: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid #d2d1d6;
+    box-shadow: none;
+  }
+
+  // product contents
+  &-tab {
+  }
+
+  &-tab__list {
+    display: flex;
+    align-items: center;
+    margin: 0 -30px;
+    overflow-y: auto;
+
+    @include abstracts.breakpoint(md) {
+      margin: 0 -15px;
+    }
+  }
+
+  &-tab__item {
+    padding: 0 30px;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.45; /* 145.455% */
+    color: #9e9da8;
+    white-space: nowrap;
+
+    &:not(&--active) {
+      cursor: pointer;
+    }
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.8rem;
+      padding: 8px 15px;
+    }
+
+    &--active {
+      color: inherit;
+    }
+  }
+
+  &-tab__contents {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-tab__content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &-tab__heading {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.41; /* 141.667% */
+  }
+
+  &-tab__text-content {
+    margin-top: -20px;
+  }
+}

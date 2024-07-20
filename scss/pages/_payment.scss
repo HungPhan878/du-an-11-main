@@ -1,0 +1,140 @@
+@use "../abstracts";
+
+// common
+%font-1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44; /* 144.444% */
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+  margin-top: 30px;
+
+  border-radius: 20px;
+  background: var(--payment-bg);
+
+  &--pointer {
+    cursor: pointer;
+
+    @include abstracts.breakpoint(sm) {
+      align-items: start;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+
+    @include abstracts.breakpoint(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__heading {
+    @extend %font-1;
+  }
+
+  &__desc {
+    margin-top: 4px;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.46; /* 146.667% */
+
+    &--low {
+      color: #9e9da8;
+      font-size: 1.6rem;
+      line-height: 1.5; /* 150% */
+    }
+  }
+
+  &__link {
+    margin-right: -8px;
+    padding: 8px;
+
+    color: #0071dc;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__choosed {
+    width: 20px;
+    height: 12px;
+
+    border: 3px solid;
+    border-color: transparent transparent green green;
+    rotate: -45deg;
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 14px;
+
+    @include abstracts.breakpoint(sm) {
+      align-self: start;
+    }
+  }
+
+  &__radio-input:checked + &__cost {
+    color: inherit;
+  }
+
+  &__cost {
+    color: #9e9da8;
+    @extend %font-1;
+  }
+
+  &__input {
+    height: 46px;
+
+    &--fainter::placeholder {
+      color: rgb(210, 209, 214, 0.4);
+    }
+  }
+
+  &__row {
+    margin-top: 30px;
+  }
+
+  &__group {
+    position: relative;
+    flex: 1;
+
+    margin-top: 0;
+
+    &:last-child {
+      padding-left: 12px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        height: calc(100% - 20px);
+        width: 1px;
+
+        background-color: #ccc;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__input-text {
+    border: none;
+    padding: 0;
+  }
+}

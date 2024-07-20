@@ -1,0 +1,81 @@
+@use "../abstracts";
+
+.section-heading {
+  &.lv1 {
+    font-size: 8rem;
+    font-weight: 500;
+    line-height: 0.95; /* 95% */
+    letter-spacing: -3.2px;
+  }
+
+  &.lv2 {
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 1.19; /* 119.048% */
+  }
+
+  &.lv3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.45; /* 119.048% */
+  }
+
+  &.lv4 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.41; /* 119.048% */
+  }
+
+  &.lv5 {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 1.16; /* 119.048% */
+    letter-spacing: -1.44px;
+  }
+
+  &.lv6 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5; /* 119.048% */
+  }
+}
+
+// section-desc
+
+.section-desc {
+  &.lv1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &.lv2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.46; /* 146.667% */
+  }
+
+  &.lv3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.87;
+    text-decoration: underline;
+  }
+
+  &.lv4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.42; /* 142.857% */
+  }
+}
+
+.icon {
+  filter: var(--icon-color);
+}
+
+.separate {
+  margin: var(--margin) 0;
+  height: 1px;
+
+  background-color: var(--separate-bg);
+}

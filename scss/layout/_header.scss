@@ -1,0 +1,444 @@
+@use "../abstracts";
+
+.header {
+  background-color: var(--bgd-color);
+
+  @include abstracts.breakpoint(lg) {
+    box-shadow: 0px 20px 60px 10px var(--header-boxshadow-color);
+  }
+  &-top {
+    position: relative;
+    z-index: 9;
+    @include abstracts.flexGap(null);
+    padding: 30px 0;
+
+    @include abstracts.breakpoint(md) {
+      padding: 16px 0;
+      justify-content: space-between;
+    }
+
+    &__menu {
+      margin-right: 39px;
+
+      @include abstracts.breakpoint(md) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // header navbar
+  &-navbar {
+    margin-left: 129px;
+
+    @include abstracts.breakpoint(xl) {
+      margin-left: 50px;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      // display: none;
+      position: fixed;
+      z-index: 10;
+      inset: 0 50% 0 0;
+      background-color: var(--navbar-bgd-color);
+      margin-left: 0;
+      padding: 20px 0;
+      border-radius: 0px 20px 20px 0px;
+      transform: translateX(-100%);
+      transition: transform 0.4s linear;
+
+      &.show {
+        transform: translateX(0);
+        box-shadow: 0px 40px 90px 20px var(--navbar-shadow-color);
+      }
+
+      &.show ~ &__overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    @include abstracts.breakpoint(sm) {
+      inset: 0 20% 0 0;
+    }
+
+    &__close-btn {
+      padding: 10px 40px;
+
+      @include abstracts.breakpoint(sm) {
+        padding: 10px 20px;
+      }
+    }
+
+    &__overlay {
+      visibility: hidden;
+      opacity: 0;
+
+      @include abstracts.breakpoint(lg) {
+        position: fixed;
+        z-index: 1;
+        inset: 0;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        transition: 0.3s linear;
+        transition-property: visibility, opacity;
+      }
+    }
+
+    // cart and heart
+    &__btn {
+      align-items: center;
+      padding: 0 40px;
+      height: 50px;
+
+      @include abstracts.breakpoint(sm) {
+        padding: 0 20px;
+        height: 44px;
+      }
+
+      &-title {
+        margin-left: 16px;
+      }
+
+      &-qnt {
+        margin-left: auto;
+      }
+    }
+  }
+
+  // list
+  &-list {
+    @include abstracts.flexGap(null);
+
+    @include abstracts.breakpoint(lg) {
+      height: calc(100% - 26px);
+      overflow-y: auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include abstracts.breakpoint(md) {
+      height: calc(100% - 140px);
+      // de khong hien tải lại trên iphone
+      overscroll-behavior: contain;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    &:hover > .dropdown-list {
+      visibility: visible;
+      opacity: 1;
+      // display: block;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      &:hover > .dropdown-list {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &--active > .dropdown-list {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+
+    &__link.lv2 {
+      @include abstracts.flexGap(6px);
+      height: 50px;
+      padding: 0 15px;
+
+      @include abstracts.breakpoint(lg) {
+        justify-content: space-between;
+        padding: 0 40px;
+        font-size: 1.6rem;
+        line-height: 1.5; /* 150% */
+      }
+
+      @include abstracts.breakpoint(sm) {
+        padding: 0 20px;
+      }
+    }
+
+    &__icon {
+      margin-top: 3px;
+      @include abstracts.breakpoint(lg) {
+        rotate: -90deg;
+        transition: rotate 0.1s linear;
+      }
+    }
+
+    &--active &__icon {
+      rotate: 0deg;
+    }
+  }
+
+  &-act {
+    @include abstracts.flexGap(20px);
+    margin-left: auto;
+
+    @include abstracts.breakpoint(md) {
+      margin-left: 0;
+    }
+
+    &__wrap {
+      position: relative;
+
+      &:hover .act-dropdown {
+        display: block;
+      }
+    }
+
+    &__sign-up {
+      @include abstracts.breakpoint(md) {
+        padding: 0 8px;
+        height: 40px;
+        font-size: 1.8rem;
+      }
+    }
+
+    &__group {
+      @include abstracts.flexGap(null);
+      min-width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      background-color: var(--bgd-top-btn);
+      box-shadow: 0px 20px 60px 10px var(--shadow-top-color);
+
+      @include abstracts.breakpoint(md) {
+        display: none;
+      }
+
+      &--single {
+        @include abstracts.breakpoint(lg) {
+          display: none;
+        }
+      }
+
+      &--single &-btn {
+        padding: 13px;
+      }
+
+      &-btn {
+        padding: 13px 20px;
+        @include abstracts.flexGap(10px);
+        cursor: pointer;
+      }
+
+      &-separate {
+        width: 1px;
+        height: 30px;
+        background-color: var(--separate-color);
+      }
+    }
+
+    &__user {
+      position: relative;
+
+      &:hover .act-dropdown {
+        display: block;
+      }
+    }
+
+    &__dropdown {
+      // display: block !important;
+      right: 0 !important;
+    }
+
+    &__dropdown-inner {
+      width: min(300px, 100vw) !important;
+    }
+
+    &__dropdown-arrow {
+      right: 15px !important;
+    }
+
+    &__avatar {
+      @include abstracts.image(50px);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+// act dropdown
+.act-dropdown {
+  position: absolute;
+  top: 48px;
+  right: -60px;
+  padding-top: 28px;
+  display: none;
+
+  &__inner {
+    position: relative;
+    padding: 30px;
+    width: min(500px, 100vw);
+    border-radius: 20px;
+    background-color: var(--act-dropdown-bg);
+    box-shadow: 0px 40px 90px 20px var(--act-dropdown-shadow);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: -15px;
+    right: 108px;
+    filter: var(--filter-form-arrow-icon);
+
+    &--favorite {
+      right: 92px;
+    }
+  }
+
+  &__header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title,
+  &__see-all {
+    line-height: 1.45; /* 145.455% */
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+
+  &__see-all {
+    font-size: 1.8rem;
+    color: #0071dc;
+    font-weight: 400;
+  }
+
+  &__separate {
+    margin: 20px 0;
+    width: 100%;
+    border: 1px solid var(--act-dropdown-separate);
+  }
+
+  &__wrap {
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--bold .act-dropdown__label,
+    &--bold .act-dropdown__price {
+      font-weight: 500;
+    }
+  }
+
+  &__label,
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.45; /* 145.455% */
+  }
+
+  &__checkout {
+    display: flex;
+    justify-content: right;
+  }
+
+  &__checkout-btn {
+    height: 46px;
+    min-width: 278px;
+    font-size: 1.8rem;
+    line-height: 1.45; /* 145.455% */
+  }
+}
+
+// cart preview
+.cart-review {
+  &__item-img {
+    position: relative;
+    padding-top: 100%;
+    border: 1px solid var(--cart-review-img-border);
+    border-radius: 10px;
+  }
+
+  &__item-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info {
+    margin-top: 14px;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.42; /* 142.857% */
+  }
+
+  &__price {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.46; /* 146.667% */
+  }
+}
+
+// user menu
+.user-menu {
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+
+    border-radius: 10px;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 0;
+
+    &:hover {
+      color: #77dae6;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+  }
+
+  &__separate {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--separate-color);
+  }
+}
